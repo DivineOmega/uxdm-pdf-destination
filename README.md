@@ -2,6 +2,15 @@
 
 The UXDM PDF destination allows you to migrate data into a PDF table.
 
+## Installation
+
+To install the UXDM PDF destination, just run the following composer 
+command.
+
+```bash
+composer require divineomega/uxdm-pdf-destination
+```
+
 ## Creating
 
 To create a new PDF destination, you must provide it with the file path 
