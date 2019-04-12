@@ -17,25 +17,31 @@ class PDFDestination implements DestinationInterface
 
     public function __construct($file)
     {
+        $directory = dirname($file);
+
+        if (!is_dir($directory)) {
+            throw new \InvalidArgumentException('No such directory: ' . $directory);
+        }
+
         $this->file = $file;
     }
 
-    public function setHtmlPrefix($htmlPrefix)
+    public function setHtmlPrefix($htmlPrefix): void
     {
         $this->htmlPrefix = $htmlPrefix;
     }
 
-    public function setHtmlSuffix($htmlSuffix)
+    public function setHtmlSuffix($htmlSuffix): void
     {
         $this->htmlSuffix = $htmlSuffix;
     }
 
-    public function setPaperSize($paperSize)
+    public function setPaperSize($paperSize): void
     {
         $this->paperSize = $paperSize;
     }
 
-    public function setPaperOrientation($paperOrientation)
+    public function setPaperOrientation($paperOrientation): void
     {
         $this->paperOrientation = $paperOrientation;
     }

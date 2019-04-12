@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 final class PDFDestinationTest extends TestCase
 {
-    private function createDataRows()
+    private function createDataRows(): array
     {
         $faker = Faker\Factory::create();
 
@@ -27,7 +27,7 @@ final class PDFDestinationTest extends TestCase
         return $dataRows;
     }
 
-    private function getExpectedFileContent(array $dataRows, $paperSize, $paperOrientation, $htmlPrefix = '', $htmlSuffix = '')
+    private function getExpectedFileContent(array $dataRows, $paperSize, $paperOrientation, $htmlPrefix = '', $htmlSuffix = ''): string
     {
         $htmlToRender = '<table class="uxdm-table"><tr class="uxdm-fields"><th class="uxdm-field">name</th><th class="uxdm-field">value</th></tr>';
 
@@ -111,7 +111,7 @@ final class PDFDestinationTest extends TestCase
             <style>
                 table { width: 100% }
                 h1 { text-align: center; }
-                th { text-transform: capitalize; text-align: center; } 
+                th { text-transform: capitalize; text-align: center; }
                 th, td { margin: 0; border: 1px solid #000; }
             </style>';
         $htmlSuffix = '<p>Created by UXDM</p>';
@@ -135,5 +135,15 @@ final class PDFDestinationTest extends TestCase
 
         $this->assertGreaterThanOrEqual(95, $percent,
             'PDF destination\'s output was too different from the expected output.');
+    }
+
+    public function testOutputDataDirectoryIsNotFound()
+    {
+        $file = '/dir-not-found/destination.pdf';
+
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('No such directory: /dir-not-found');
+
+        new PDFDestination($file);
     }
 }
