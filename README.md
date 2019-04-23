@@ -1,5 +1,8 @@
 # UXDM PDF Destination
 
+[![Build Status](https://travis-ci.com/DivineOmega/uxdm-pdf-destination.svg?branch=master)](https://travis-ci.com/DivineOmega/uxdm-pdf-destination)
+[![Coverage Status](https://coveralls.io/repos/github/DivineOmega/uxdm-pdf-destination/badge.svg?branch=master)](https://coveralls.io/github/DivineOmega/uxdm-pdf-destination?branch=master)
+
 The UXDM PDF destination allows you to migrate data into a PDF table.
 
 ## Installation
