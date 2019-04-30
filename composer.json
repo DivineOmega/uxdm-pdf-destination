@@ -16,7 +16,7 @@
     "require": {
         "php": "^7.1",
         "dompdf/dompdf": "^0.8.3",
-        "divineomega/uxdm": "v3.0.0"
+        "divineomega/uxdm": "^3.0.0"
     },
     "autoload": {
         "psr-4": {
