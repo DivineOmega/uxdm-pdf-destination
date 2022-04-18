@@ -14,7 +14,7 @@
         "php-coveralls/php-coveralls": "^2.0"
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.1||^8.0",
         "dompdf/dompdf": "^0.8.3",
         "divineomega/uxdm": "^3.0.0"
     },
